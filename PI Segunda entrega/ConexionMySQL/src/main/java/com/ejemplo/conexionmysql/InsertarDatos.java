@@ -10,9 +10,9 @@ public class InsertarDatos {
 
     public static void main(String[] args) {
 
-        String url = "jdbc:mysql://localhost:3306/prueba_java";
+        String url = "jdbc:mysql://localhost:3306/boutiqueBrigton";
         String usuario = "root";
-        String contraseña = "tu_contraseña";
+        String contraseña = "123456";
 
         try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
              Scanner sc = new Scanner(System.in)) {
@@ -28,7 +28,7 @@ public class InsertarDatos {
             System.out.print("Ingrese el teléfono: ");
             String telefono = sc.nextLine();
 
-            String sql = "INSERT INTO usuarios (nombre, email, telefono) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO cliente (nombre, email, telefono) VALUES (?, ?, ?)";
             PreparedStatement ps = conexion.prepareStatement(sql);
             ps.setString(1, nombre);
             ps.setString(2, email);
